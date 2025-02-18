@@ -15,9 +15,9 @@
             <a href="index.html"><img src="media/logo.svg" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="days.html">Days</a></li>
-            <li><a href="https://github.com/shibinshibu01/ilp-recap/edit/main/data.js" target="_blank">Edit</a></li>
+            <li><a href="index.html" style="color: #191919;">Home</a></li>
+            <li><a href="days.html"  style="color: #191919;">Days</a></li>
+            <li><a href="https://github.com/shibinshibu01/ilp-recap/edit/main/data.js" target="_blank"  style="color: #191919;">Edit</a></li>
         </ul>
     </nav>
     
@@ -136,13 +136,25 @@
         }
 
         const navbar = document.querySelector("nav");
+        const navLinks = document.querySelectorAll(".nav-links a");
 
         window.addEventListener("scroll", () => {
             if (window.scrollY > 50) {  
                 navbar.style.backgroundColor = "#191919"; 
-                navbar.style.transition = "background-color 0.3s ease";
+                navbar.style.transition = "background-color 0.3s ease, color 0.3s ease";
+
+                // Change nav link colors when scrolled
+                navLinks.forEach(link => {
+                    link.style.color = "#d9d9d9";  // Light text when navbar is dark
+                });
+
             } else {
                 navbar.style.backgroundColor = "transparent"; 
+
+                // Reset nav link colors when at the top
+                navLinks.forEach(link => {
+                    link.style.color = "#191919";  // Dark text when navbar is transparent
+                });
             }
         });
     </script>

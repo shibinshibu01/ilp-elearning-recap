@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #DC143C;
+    background-color: #C588EE;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -18,6 +18,8 @@ nav {
     height: 80px;
     padding: 50px 40px;
     background-color: transparent;
+    color: #191919;
+    transition: color 0.3s ease;
     transition: background-color 0.3s ease;
     z-index: 100;
 }
@@ -46,9 +48,11 @@ nav {
 
 .nav-links a:hover, a:active {
     text-decoration: none;
-    color: #DC143C;
+    color: #C588EE;
     font-weight: 600;
 }
+
+
 
 #background-img {
     z-index: -1;
@@ -77,14 +81,13 @@ nav {
 }
 
 footer {
+    bottom: 0;
     margin-top: 135px;
-    background-color: #DC143C;
-    color: #d9d9d9;
+    background-color: #C588EE;
+    color: #191919;
     text-align: center;
     padding: 40px;
-    position: relative;
     width: 100%;
-    z-index: 0;
 }
 
 .dark-bg-curv {
@@ -117,7 +120,7 @@ footer {
     flex-shrink: 0;
     border-radius: 36px 36px 0px 0px;
     border: 1px solid;
-    border-color: #DC143C;
+    border-color: #C588EE;
     background: #191919;
 }
 
@@ -159,8 +162,8 @@ footer {
 
 .day-card:hover {
     padding: 5px 5px 17px 5px;
-    background-color: #DC143C;
-    color: #d9d9d9;
+    background-color: #C588EE;
+    color: #191919;
     transition: 0.3s;
 }
 
@@ -173,8 +176,8 @@ footer {
 button {
     position: absolute;
     top: 55%;    
-    background-color: #dc143c00;
-    color: #fff;
+    background-color: #191919;
+    color: #d9d9d9;
     border: none;
     font-size: 28px;
     padding: 12px;
@@ -183,7 +186,7 @@ button {
 }
 
 button:hover {
-    background-color: #d9d9d922;
+    background-color: #c588ee6d;
 }
 
 .prev {
@@ -208,8 +211,8 @@ button:hover {
 
 .summary-card{
     justify-content: center;
-    background-color: #DC143C;
-    color: #d9d9d9;;
+    background-color: #C588EE;
+    color: #191919;
     height: fit-content;
     width: fit-content;
     margin: 40px auto 40px auto;
@@ -221,14 +224,14 @@ button:hover {
 }
 
 .title-text {
-    color: #d9d9d9;
+    color: #191919;
 }
 .summary-text {
     padding: 23px 0 0 0;
 }
 .desc-text {
     padding: 5px 0 0 0;
-    color: #d9d9d9;
+    color: #191919;
     opacity: 0.8;
 }
 
@@ -245,7 +248,7 @@ button:hover {
 
 .active-dot {
     z-index: 100;
-    background-color: #DC143C; 
+    background-color: #C588EE; 
 }
 
 .dots-container {
@@ -267,7 +270,7 @@ button:hover {
         height: auto;
     }
     footer {
-        margin-top: 600px;
+        margin-top: 570px;
     }
     #background {
         background-image: url(media/bg-mobile.png);
@@ -279,7 +282,7 @@ button:hover {
         z-index: -1;
         width: 100%;
         scale: 1.5;
-        margin-top: 38vh;
+        margin-top: 25vh;
         position: relative;
     }
     nav {
