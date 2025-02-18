@@ -34,7 +34,6 @@ days.forEach((day) => {
 });
 
 
-
 const navbar = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {

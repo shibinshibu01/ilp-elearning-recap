@@ -27,7 +27,7 @@
     
     <div class="dark-bg-curv" style="height: 400px;">
         <div class="dark-daycard">
-            <div  class="card-slider">
+            <div class="card-slider">
                 <div class="card-container" id="card-container"></div>
             </div>
             <button class="prev" id="prev">&#10094;</button>
@@ -39,6 +39,83 @@
         <p>Learning. Growing. Together.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const cardContainer = document.getElementById('card-container');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        const isIndexPage = window.location.pathname.includes("index.html");
+        const numCardsToDisplay = isIndexPage ? 3 : 20;
+
+        const days = Array.from({ length: 20 }, (_, i) => ({
+            day: i + 1,
+            imgSrc: `media/days/Day ${i + 1}.png`
+        }));
+
+
+        let currentIndex = 0;
+        function createCard(day) {
+            const card = document.createElement('div');
+            card.classList.add('day-card');
+
+            const img = document.createElement('img');
+            img.src = day.imgSrc;
+            img.alt = `Day ${day.day}`;
+
+            const text = document.createElement('p');
+            text.textContent = `ILP Day ${day.day}`;
+
+            card.addEventListener('click', () => {
+                window.location.href = `data.html?day=${day.day}`;
+            });
+
+            card.appendChild(img);
+            card.appendChild(text);
+            return card;
+        }
+
+        function displayCards() {
+            cardContainer.innerHTML = ''; 
+
+            const start = currentIndex * 3;
+            const end = start + 3;
+            const visibleDays = days.slice(start, end);  
+
+            visibleDays.forEach((day) => {
+                const card = createCard(day);
+                cardContainer.appendChild(card);
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % Math.ceil(days.length / 3);
+            displayCards();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + Math.ceil(days.length / 3)) % Math.ceil(days.length / 3);
+            displayCards();
+        });
+
+        if (isIndexPage) {
+            displayCards(); 
+        } else {
+            days.forEach((day) => {
+                const card = createCard(day);
+                cardContainer.appendChild(card);
+            });
+        }
+
+        const navbar = document.querySelector("nav");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {  
+                navbar.style.backgroundColor = "#191919"; 
+                navbar.style.transition = "background-color 0.3s ease";
+            } else {
+                navbar.style.backgroundColor = "transparent"; 
+            }
+        });
+    </script>
 </body>
 </html>
