@@ -7,6 +7,7 @@ const nextButton = document.getElementById('next');
 const days = Array.from({ length: 20 }, (_, i) => ({
     day: i + 1,
     imgSrc: `media/days/Day ${i + 1}.png`
+
 }));
 
 days.forEach((day) => {
@@ -19,6 +20,10 @@ days.forEach((day) => {
 
     const text = document.createElement('p');
     text.textContent = `ILP Day ${day.day}`;
+
+    card.addEventListener('click', () => {
+        window.location.href = `days-pages/day${day.day}.html`; // Redirect to dayX.html
+    });
 
     card.appendChild(img);
     card.appendChild(text);
