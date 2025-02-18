@@ -4,7 +4,10 @@ const cardContainer = document.getElementById('card-container');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
-const days = Array.from({ length: 20 }, (_, i) => ({
+const isIndexPage = window.location.pathname.includes("index.html") || window.location.pathname === "/";
+const numCardsToDisplay = isIndexPage ? 3 : 20;
+
+const days = Array.from({ length: numCardsToDisplay }, (_, i) => ({
     day: i + 1,
     imgSrc: `media/days/Day ${i + 1}.png`
 
@@ -30,29 +33,7 @@ days.forEach((day) => {
     cardContainer.appendChild(card);
 });
 
-let index = 0;
-const cardWidth = 220;
-const visibleCards = 3;
-const totalCards = days.length;
-const maxIndex = totalCards - visibleCards;
 
-function updateCarousel() {
-    cardContainer.style.transform = `translateX(-${index * cardWidth}px)`;
-}
-
-nextButton.addEventListener('click', () => {
-    if (index < maxIndex) {
-        index++;
-        updateCarousel();
-    }
-});
-
-prevButton.addEventListener('click', () => {
-    if (index > 0) {
-        index--;
-        updateCarousel();
-    }
-});
 
 const navbar = document.querySelector("nav");
 
