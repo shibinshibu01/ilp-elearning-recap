@@ -22,7 +22,7 @@ days.forEach((day) => {
     text.textContent = `ILP Day ${day.day}`;
 
     card.addEventListener('click', () => {
-        window.location.href = `days-pages/day${day.day}.html`; // Redirect to dayX.html
+        window.location.href = `summary/data.html?day=${day.day}`; // Redirect to dayX.html
     });
 
     card.appendChild(img);

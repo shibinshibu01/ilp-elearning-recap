@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days-list</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../data.js"></script>
+    <script src="../script.js"></script>
+</head>
+<body style="background-color: #191919;">
+
+    <nav>
+        <div class="logo">
+            <a href="../index.html"><img src="../media/logo.svg" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../days.html">Days</a></li>
+            <li><a href="https://github.com/shibinshibu01/ilp-recap" target="_blank">Edit</a></li>
+        </ul>
+    </nav>
+    
+    <div>
+        <img src="../media/ilp-day-x.png" alt="Initial Learning Program Recap" id="background" style="margin-top: -50px; margin-bottom: -390px">
+        <p id="day-title" class="headline">ILP Day 1</p>
+    </div>
+    <div id="course-container">
+        
+    </div>
+   
+
+    <footer style="margin-top: 0px;">
+        <p>Learning. Growing. Together.</p>
+    </footer>
+    
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const dayNumber = params.get("day");
+
+        if (dayNumber && dayData[dayNumber]) {
+            const data = dayData[dayNumber];
+
+            document.getElementById("day-title").textContent = data.title;
+
+            const courseContainer = document.getElementById("course-container");
+            courseContainer.innerHTML = "";
+
+            data.courses.forEach(course => {
+                const courseCard = document.createElement("div");
+                courseCard.classList.add("summary-card");
+
+                const title = document.createElement("h2");
+                title.textContent = course.title;
+                title.classList.add("title-text");
+
+                const desc = document.createElement("p");
+                desc.textContent = course.description;
+                desc.classList.add("desc-text");
+
+                const summ = document.createElement("p");
+                summ.textContent = course.summary;
+                summ.classList.add("summary-text");
+
+                courseCard.appendChild(title);
+                courseCard.appendChild(desc);
+                courseCard.appendChild(summ);
+                courseContainer.appendChild(courseCard);
+            });
+
+        } else {
+            document.getElementById("day-title").textContent = "Invalid Day";
+        }
+    </script>
+
+</body>
+</html>

@@ -173,9 +173,43 @@ button:hover {
     right: 9%;
 }
 
+.headline {
+    color: #D9D9D9;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 600;
+    z-index: 100;
+    margin-top: -110px;
+    margin-bottom: 30px;
+}
 
+.summary-card{
+    justify-content: center;
+    background-color: #DC143C;
+    color: #d9d9d9;;
+    height: fit-content;
+    width: fit-content;
+    margin: 40px auto 40px auto;
+    width: 80%;
+    border-radius: 36px 36px 0 0;
+    padding: 45px 60px 60px 60px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: justify;
+}
 
-
+.title-text {
+    color: #d9d9d9;
+}
+.summary-text {
+    padding: 23px 0 0 0;
+}
+.desc-text {
+    padding: 5px 0 0 0;
+    color: #d9d9d9;
+    opacity: 0.8;
+}
 
 @media screen and (max-width: 800px) {
     .day-card {
