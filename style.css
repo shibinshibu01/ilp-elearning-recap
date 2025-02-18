@@ -50,14 +50,34 @@ nav {
     font-weight: 600;
 }
 
-#background {
+#background-img {
     z-index: -1;
     width: 100%;
     position: relative;
 }
+#background-day {
+    z-index: -1;
+    width: 100%;
+    position: relative;
+}
+#background {
+    z-index: -1;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-image: url(media/bg.png);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
 footer {
-    margin-top: 165px;
+    margin-top: 135px;
     background-color: #DC143C;
     color: #d9d9d9;
     text-align: center;
@@ -90,8 +110,9 @@ footer {
 }
 .dark-daycard {
     width: 90%;
-    height: 160%;
+    height: auto;
     padding-top: 40px;
+    padding-bottom: 50px;
     margin: auto;
     flex-shrink: 0;
     border-radius: 36px 36px 0px 0px;
@@ -211,13 +232,61 @@ button:hover {
     opacity: 0.8;
 }
 
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.active-dot {
+    z-index: 100;
+    background-color: #DC143C; 
+}
+
+.dots-container {
+    display: flex;          
+    justify-content: center;
+    align-items: center;    
+    margin-top: 20px;      
+}
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     .day-card {
         width: 200px;
     }
     .headline {
         margin-top: 80px;
     }
+    .dark-daycard {
+        height: auto;
+    }
+    footer {
+        margin-top: 600px;
+    }
+    #background {
+        background-image: url(media/bg-mobile.png);
+        margin: 0;
+        padding: 0;
+        height: 70vh;
+    }
+    #background-img {
+        z-index: -1;
+        width: 100%;
+        scale: 1.5;
+        margin-top: 38vh;
+        position: relative;
+    }
+    nav {
+        background-color: #1919198c;
+    }
+    #dark-bg-curv{
+        padding-top: 150px;
+    }
 }
+

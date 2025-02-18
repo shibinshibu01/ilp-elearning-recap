@@ -21,8 +21,8 @@
         </ul>
     </nav>
     
-    <div>
-        <img src="media/bg.png" alt="Initial Learning Program Recap" id="background">
+    <div id="background">
+        <img src="media/ilp.png" alt="Initial Learning Program Recap" id="background-img">
     </div>
     
     <div class="dark-bg-curv" style="height: 400px;">
@@ -31,10 +31,11 @@
                 <div class="card-container" id="card-container"></div>
             </div>
             <button class="prev" id="prev">&#10094;</button>
-            <button class="next" id="next">&#10095;</button>    
+            <button class="next" id="next">&#10095;</button>   
+            <div class="dots-container" id="dots-container"></div> 
         </div>
     </div>
-
+    
     <footer>
         <p>Learning. Growing. Together.</p>
     </footer>
@@ -43,9 +44,11 @@
         const cardContainer = document.getElementById('card-container');
         const prevButton = document.getElementById('prev');
         const nextButton = document.getElementById('next');
+        const dotsContainer = document.getElementById('dots-container');
 
         const isIndexPage = window.location.pathname.includes("index.html");
         const numCardsToDisplay = isIndexPage ? 3 : 20;
+        const totalSets = Math.ceil(20 / 3);
 
         const days = Array.from({ length: 20 }, (_, i) => ({
             day: i + 1,
@@ -85,6 +88,31 @@
                 const card = createCard(day);
                 cardContainer.appendChild(card);
             });
+
+            updateDots();
+        }
+
+        function createDots() {
+            for (let i = 0; i < totalSets; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    displayCards();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active-dot');
+                } else {
+                    dot.classList.remove('active-dot');
+                }
+            });
         }
 
         nextButton.addEventListener('click', () => {
@@ -98,6 +126,7 @@
         });
 
         if (isIndexPage) {
+            createDots();
             displayCards(); 
         } else {
             days.forEach((day) => {
