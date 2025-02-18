@@ -77,12 +77,18 @@
             return card;
         }
 
-        function displayCards() {
-            cardContainer.innerHTML = ''; 
+        function displayCards(direction) {
+            cardContainer.innerHTML = '';
+
+            if (direction === 'next') {
+                cardContainer.classList.add("slide-left");
+            } else if (direction === 'prev') {
+                cardContainer.classList.add("slide-right");
+            }
 
             const start = currentIndex * 3;
             const end = start + 3;
-            const visibleDays = days.slice(start, end);  
+            const visibleDays = days.slice(start, end);
 
             visibleDays.forEach((day) => {
                 const card = createCard(day);
@@ -90,7 +96,21 @@
             });
 
             updateDots();
+
+            setTimeout(() => {
+                cardContainer.classList.remove("slide-left", "slide-right");
+            }, 500); 
         }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSets;
+            displayCards('next'); 
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSets) % totalSets;
+            displayCards('prev'); 
+        });
 
         function createDots() {
             for (let i = 0; i < totalSets; i++) {
