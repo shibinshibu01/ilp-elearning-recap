@@ -63,7 +63,18 @@
 
                 const summ = document.createElement("p");
                 summ.textContent = course.summary;
-                summ.classList.add("summary-text");
+                summ.classList.add("summary-text", "hidden");
+
+
+                courseCard.addEventListener("click", () => {
+                    if (summ.classList.contains("hidden")) {
+                        summ.classList.remove("hidden");
+                        summ.style.maxHeight = summ.scrollHeight + "px"; 
+                    } else {
+                        summ.style.maxHeight = "0"; // Collapse smoothly
+                        setTimeout(() => summ.classList.add("hidden"), 0); 
+                    }
+                });
 
                 courseCard.appendChild(title);
                 courseCard.appendChild(desc);
