@@ -102,15 +102,6 @@
             }, 500); 
         }
 
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalSets;
-            displayCards('next'); 
-        });
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalSets) % totalSets;
-            displayCards('prev'); 
-        });
 
         function createDots() {
             for (let i = 0; i < totalSets; i++) {
@@ -134,16 +125,16 @@
                 }
             });
         }
-
         nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % Math.ceil(days.length / 3);
-            displayCards();
+            currentIndex = (currentIndex + 1) % totalSets;
+            displayCards('next'); 
         });
 
         prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + Math.ceil(days.length / 3)) % Math.ceil(days.length / 3);
-            displayCards();
+            currentIndex = (currentIndex - 1 + totalSets) % totalSets;
+            displayCards('prev'); 
         });
+
 
         if (isIndexPage) {
             createDots();
