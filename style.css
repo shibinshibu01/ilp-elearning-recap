@@ -334,7 +334,12 @@ button:hover {
         padding-top: 150px;
     }
     .summary-card {
-        text-align: left;
+        font-size: 13px;
+        padding: 10% 6%;
+        width: 90%;
+    }
+    .title-text {
+        text-align: center;
     }
 }
 
