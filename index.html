@@ -138,13 +138,17 @@
 
         if (isIndexPage) {
             createDots();
-            displayCards(); 
+            currentIndex = 0;  
+            displayCards();
         } else {
-            days.forEach((day) => {
+            cardContainer.innerHTML = '';  
+            const firstSet = days.slice(0, numCardsToDisplay); 
+            firstSet.forEach((day) => {
                 const card = createCard(day);
                 cardContainer.appendChild(card);
             });
         }
+
 
         const navbar = document.querySelector("nav");
         const navLinks = document.querySelectorAll(".nav-links a");
@@ -154,9 +158,9 @@
                 navbar.style.backgroundColor = "#191919"; 
                 navbar.style.transition = "background-color 0.3s ease, color 0.3s ease";
 
-                // Change nav link colors when scrolled
+                
                 navLinks.forEach(link => {
-                    link.style.color = "#d9d9d9";  // Light text when navbar is dark
+                    link.style.color = "#d9d9d9"; 
                 });
 
             } else {
@@ -164,7 +168,7 @@
 
                 // Reset nav link colors when at the top
                 navLinks.forEach(link => {
-                    link.style.color = "#191919";  // Dark text when navbar is transparent
+                    link.style.color = "#191919";  
                 });
             }
         });
