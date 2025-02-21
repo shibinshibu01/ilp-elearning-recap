@@ -235,7 +235,7 @@ const dayData = {
             {
                 title: "Object-Oriented Programming Concepts.",
                 description: "Understanding the core concepts of OOP.",
-                summary: "AThis course provides a comprehensive understanding of the four principles of object-oriented  programming: Encapsulation, Abstraction, Inheritance, and Polymorphism. Encapsulation is the  process of restricting direct access to an object's data and methods. It helps to protect data from  unintended modifications. Abstraction means hiding the complex implementation details of an object  and only exposing the necessary parts. Inheritance allows a class (child class) to inherit properties and  behaviours from another class (parent class). Polymorphism means \"one name, many forms.\" It allows  a method to behave differently based on the object that calls it."
+                summary: "This course provides a comprehensive understanding of the four principles of object-oriented  programming: Encapsulation, Abstraction, Inheritance, and Polymorphism. Encapsulation is the  process of restricting direct access to an object's data and methods. It helps to protect data from  unintended modifications. Abstraction means hiding the complex implementation details of an object  and only exposing the necessary parts. Inheritance allows a class (child class) to inherit properties and  behaviours from another class (parent class). Polymorphism means \"one name, many forms.\" It allows  a method to behave differently based on the object that calls it."
             },
             {
                 title: "Conveying Your Message Without Words.",
