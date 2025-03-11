@@ -9,7 +9,7 @@ const dayData = {
             },
             {
                 title: "The Mindset of the Software Developer.",
-                description: "Exploring the thought processes and problem-solving approaches of developers.",
+                description: "Exploring the thought processes and problem solving approaches of developers.",
                 summary: "Developers are naturally curious and deconstruct things to understand how they work, whether it's software, hardware, or physical objects. Their work goes beyond just writing code; most of it involves solving abstract problems by breaking down complex systems into smaller components for better understanding and flexibility. They prefer automation to eliminate repetitive tasks and organize small, functional components into larger, efficient systems. While they refine solutions to be adaptable through generalization, they must avoid unnecessary over-complication. Abstraction helps them manage complexity by hiding implementation details and categorizing concepts effectively. Software development is also a craft, and developers take pride in writing clean, effective code. They juggle multiple layers of work in their minds, switching contexts like a call stack, and maintaining deep concentration, as interruptions can be highly disruptive. With a mindset geared toward continuous improvement, developers constantly learn new languages, frameworks, and techniques to refine their skills and stay ahead in the ever-evolving tech landscape."
             },
             {
